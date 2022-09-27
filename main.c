@@ -16,7 +16,7 @@ void saisir_note(Tab_notes note)
         scanf("%f",&note[i]);
         if(*(note+i)>20 || *(note+i)<0)
         {
-            break;
+            printf("erreur");
         }
     }
 }
@@ -131,42 +131,77 @@ void ajouter_1_point (Tab_notes note)
 int main()
 {
     int i;
-    float moyenne; float max,min;
+
+    float moyenne;
+
+    float max,min;
+
     Tab_notes note;
+
     Tab_notes note_1={20,19.7,19,0,0.1,9,2.5,17.2,12.3,12.4};
+
     Tab_notes note_2={0.9,0.98,0.78,0.54,0.32,0.65,0.45,0.49,0.85,0.74};
+
     Tab_coeff coeff, coeff_1={2,3,2,1,5,2,2,1,1,3};
+
     saisir_note(note);
+
     saisir_coeff(coeff);
+
     afficher_tableau(note,coeff);
+
     printf("\n la moyenne des notes est : %2.3f\n", calcul_moyenne(note,coeff,&moyenne));
+
     printf(" le maximun est : %f\n",maximun(note,&max));
+
     printf("Le minimun est : %f\n",minimun(note,&min));
+
     ajouter_1_point(note);
+
     int position;
+
     printf("Entrer la position de la note que vous voulez modifier");
+
     scanf("%d",&position);
+
     modifier_i(note,&position);
+
     afficher_tableau(note,coeff);
+
     printf("\n la moyenne des notes est : %2.3f\n", calcul_moyenne(note_1,coeff_1,&moyenne));
+
     printf(" le maximun est : %f\n",maximun(note_1,&max));
+
     printf("Le minimun est : %f\n",minimun(note_1,&min));
+
     ajouter_1_point(note_1);
+
     printf("Entrer la position de la note que vous voulez modifier");
+
     scanf("%d",&position);
+
     modifier_i(note_1,&position);
+
     printf("les notes actuel sont : \n");
+
     afficher_tableau(note_1,coeff_1);
 
-
     printf("\n la moyenne est : %2.3f\n", calcul_moyenne(note_2,coeff_1,&moyenne));
+
     printf(" le maximun est : %f\n",maximun(note_2,&max));
+
     printf("Le minimun est : %f\n",minimun(note_2,&min));
+
     ajouter_1_point(note_2);
+
     printf("Entrer la position de la note que vous voulez modifier");
+
     scanf("%d",&position);
+
     modifier_i(note_2,&position);
+
     printf("Les nouvelles notes sont : \n");
+
     afficher_tableau(note_2,coeff_1);
 
 }
