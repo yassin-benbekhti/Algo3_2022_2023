@@ -4,9 +4,8 @@
 typedef struct { char nom[15];
                 char prenom[15];
                 int codeFonction;
-                float salaire;
+                float salaire;}
                 employe;
-}
 int main()
 {
     employe e;
@@ -31,5 +30,5 @@ int main()
 
     scanf("%f",&(em->salaire));
 
-    printf("L'employé est %s %s avec un code de fonction %d et un salaire de %f",((*pe).nom),((*pe).prenom),((*pe).codeFonction),((*pe).salaire));
+    printf("L'employÃ© est %s %s avec un code de fonction %d et un salaire de %f",((*pe).nom),((*pe).prenom),((*pe).codeFonction),((*pe).salaire));
 }
