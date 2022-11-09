@@ -1,6 +1,6 @@
 int afficherDoublons(Tab t, int nbClients){
     int nbDoublons = 0;
-    printf("\n-- Affichage des doublons\n");
+    printf("\n Affichage des doublons\n");
     for(int i = 0; i<nbClients; i++)
         {
         for(int j = 0; j<nbClients; j++)
