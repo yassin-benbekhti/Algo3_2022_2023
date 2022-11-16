@@ -71,3 +71,12 @@ void decroissant(tab t, int n)
 
 };
 
+int main()
+{ Tab t1 = {4,2,8,0,7,3,1,5,9,6};
+printf ("La somme des entiers du tableau t1 = %d\n",somme(t1,N,0));
+affiche (t1,N,0);
+somme2(t1,n);
+estsup(t1,n,v);
+decroissant(t1,n);
+return 0;
+}
