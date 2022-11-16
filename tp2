@@ -36,3 +36,24 @@ int somme2(Tab t,int n)
             return res ;
 };
 
+int estsup(Tab t,int n,int v)
+{
+
+    if (n==0)
+    {
+        return 0
+    }
+
+        if (t[n]> v)
+        {
+           return n;
+
+
+        }
+   else
+    {
+        estsup(t,n-1);
+    }
+
+};
+
