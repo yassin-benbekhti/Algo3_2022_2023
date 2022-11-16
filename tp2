@@ -24,3 +24,15 @@ void affiche(Tab t,int n,int i)
     }
 
 };
+
+int somme2(Tab t,int n)
+{
+    int i=0;
+    int res=0;
+    if (i<n)
+        {
+            res=t[i]+somme(t,n,i+1);
+            }
+            return res ;
+};
+
