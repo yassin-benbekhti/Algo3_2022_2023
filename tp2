@@ -57,3 +57,17 @@ int estsup(Tab t,int n,int v)
 
 };
 
+void decroissant(tab t, int n)
+{
+    if(n==0)
+    {
+        return t[0]
+    }
+    else{
+        return t[n]; affichangeDecroissante(t,n-1);
+
+    }
+
+
+};
+
