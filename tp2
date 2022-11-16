@@ -14,3 +14,13 @@ printf ("\t addition avec t[%d]\n",i );
 printf ("\t Somme a partir de l’indice %d = %d\n\n",i,res);
 return res ;
 }
+
+void affiche(Tab t,int n,int i)
+{
+    while (i<=n)
+        {
+            printf(t);
+    affiche(t,n,i+1);
+    }
+
+};
