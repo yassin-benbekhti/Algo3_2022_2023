@@ -1,56 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#define N 10
-
-typedef int Tab[N];
-
-void remplirTableau(Tab t, int n)
-{ int i ;
-srand ( time(NULL) );
-for (i=0; i<n; i++)
-    t[ i]= rand() % n;
-}
-
-void afficher(Tab t, int n, int i)
-{
-    if (i == n)
-    {
-        printf("| %d", t[0]) ;
-        affiche (t + 1 , n, i+1) ;
-    }
-}
-
-void cpytableau(Tab t1, Tab t2, int n)
-{
-    int i
-    for(i=0; i<n; i++)
-    {
-        t2[i]=t1[i];
-    }
-}
-
-int triMin(Tab t, int n)
-{
-    int min;
-    int temp;
-    int i;
-    for(i=0; i<n-1; i++)
-    {
-       min = i;
-       int j;
-       for( j= i+1; j<n; j++)
-           if(t[j]<t[min])
-               min = j;
-       if(min!=i)
-       {
-          temp=t[i];
-          t[i]=t[min];
-          t[min]=temp;
-       }
-    }
-}
-
 int permuter(int *i, int *j){
 	int temp;
 	temp = *i;
@@ -137,9 +84,3 @@ int triRapid(Tab t, int g, int d){
 }
 
 
-
-
-int main()
-{
-
-}
