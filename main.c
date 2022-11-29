@@ -1,145 +1,85 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #define N 10
-
 typedef int Tab[N];
 
-void remplirTableau(Tab t, int n)
-{ int i ;
-srand ( time(NULL) );
-for (i=0; i<n; i++)
-    t[ i]= rand() % n;
-}
 
-void afficher(Tab t, int n, int i)
+int partitionner(int tab[],int g,int d){
+int i;
+int j;
+int pivot;
+int temp;
+pivot = tab[g];
+i=g-1;
+j=d+1;
+while (i<j){
+while (tab[i]<=pivot){
+    i++;
+};
+while (tab[j]>pivot){
+    j--;
+};
+if (i<j){
+    temp=tab[i];
+    tab[i]=tab[j];
+    tab[j]=temp;
+};
+};
+    tab[g]=tab[j];
+    tab[j]=pivot;
+return j;
+};
+
+void triRapide(int *tab,int size)
 {
-    if (i == n)
+  int i,j;
+  int pivot
+  int temp;
+  if (size<2)
+  {
+      return pivot=tab[size/2];
+  }
+  for (i = 0,j = size-1,i++,j--)
     {
-        printf("| %d", t[0]) ;
-        affiche (t + 1 , n, i+1) ;
-    }
-}
-
-void cpytableau(Tab t1, Tab t2, int n)
-{
-    int i
-    for(i=0; i<n; i++)
+    while (tab[i]<pivot)
     {
-        t2[i]=t1[i];
-    }
-}
+        i++;
+    };
+    while (pivot<tab[j])
+    {
+        j--;
+    };
+    if (i>=j)
+    {
+    break;
+    temp=tab[i];
+    tab[i]=tab[j];
+    tab[j]=temp;
+    };
+   };
+};
 
-int triMin(Tab t, int n)
+int initPivot(int tab[],int n)
 {
-    int min;
+    int i,j;
     int temp;
-    int i;
-    for(i=0; i<n-1; i++)
-    {
-       min = i;
-       int j;
-       for( j= i+1; j<n; j++)
-           if(t[j]<t[min])
-               min = j;
-       if(min!=i)
-       {
-          temp=t[i];
-          t[i]=t[min];
-          t[min]=temp;
-       }
-    }
-}
-
-int permuter(int *i, int *j){
-	int temp;
-	temp = *i;
-	*i = *j;
-	*j = temp;
-}
-
-int Pivoter(Tab t, int g, int d){
-	return t[g];
-}
-
-int partition(int arr[], int low, int high)
+    for (i=0;i<n-1;i++)
 {
-    int pivot;
-    int i;
-    pivot = arr[high];
-
-    i = (low - 1);
-
-    for (int j = low; j <= high- 1; j++)
+        for (j=i+1;j<n;j++)
     {
-
-        if (arr[j] <= pivot)
+        if (tab[i]>tab[j])
         {
-            i++;
-            permuter(&arr[i], &arr[j]);
-        }
-    }
-    permuter(&arr[i + 1], &arr[high]);
-    return (i + 1);
+            temp=tab[i];
+            tab[i]=tab[j];
+            tab[j]=temp;
+        };
+    };
+};
+return tab[n/2];
 }
-
-
-int partition(Tab t, int g, int d)
-{
-	int pivot;
-	int i;
-	int j;
-	int fin;
-	pivot = initPivot(t, g,d);
-	i= g-1;
-	j=d+1;
-	fin = 0;
-
-	while (!fin)
-        {
-		printf(" %d,%d,%d \n", pivot, i, j);
-
-		do
-            {
-			j = j -1;
-			}
-			while(t[j] < pivot);
-			{
-			    do
-                    {
-                        i = i +1;
-                }
-            }
-                while(t[i] >= pivot);
-        {
-            if (i < j)
-                {
-                    printf("\n Permuter ");
-                    permute(&t[i], &t[j]);
-                    }
-                    else
-                        {
-                            fin = 1;
-                    }
-        }
-        }
-	return i;
-}
-
-int triRapid(Tab t, int g, int d){
-	if (g < d)
-    {
-		int p = partition(t, g, d);
-		triRapid(t, g, p-1);
-		triRapid(t, p + 1, d);
-
-	}
-}
-
-
-
 
 int main()
 {
-
+    Tab t = {3,17,9,15,2,7,10,9,8,12};
+    triRapide(t,N);
+    return 0;
 }
