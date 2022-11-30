@@ -3,7 +3,7 @@ void appartientClientFichier(char *nomFichier, char *nom){
     Client c;
     int trouve;
     while(!feof(f)){
-        fscanf(f, "%d %s %s ", &c.id, c.nom, c.tel);
+        fscanf(f, "%d %s ", &c.id, c.nom);
         if(strcmp(c.nom, nom)== 1){
             trouve=1;
         }
