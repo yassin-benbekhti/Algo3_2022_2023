@@ -5,7 +5,7 @@ int nombreClientsFichier(char * nomFichier){
      Client c;
      while(!feof(f))
      {
-         fin=fscanf(f," %d %s %s ", &c.id,c.nom,c.tel);
+         fin=fscanf(f," %d %s ", &c.id,c.nom);
          if(fin !=EOF )
          {
              compteur++;
