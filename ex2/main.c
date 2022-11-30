@@ -8,7 +8,7 @@ void ajouteClientFichier(char  *nomFichier)
     {
 
     saisieClient(&c);
-    fprintf(f," \n id %d nom %s tel %s ",c.id,c.nom, c.tel);
+    fprintf(f," \n id %d nom %s ",c.id,c.nom, );
     fclose(f);
     }
 }
