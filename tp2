@@ -64,7 +64,8 @@ void decroissant(tab t, int n)
         return t[0]
     }
     else{
-        return t[n]; affichangeDecroissante(t,n-1);
+        return t[n]; 
+        decroissant(t,n-1);
 
     }
 
